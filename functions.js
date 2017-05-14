@@ -81,6 +81,9 @@ function divide(num1, num2){
  */
 
 function square(num){
+
+  // another way to do it
+  // return Math.pow(x, 2);
   return (num * num);
 }
 
@@ -94,20 +97,42 @@ function square(num){
  */
 
 function calculate(op, num1, num2){
+
+  /** Alternate Solution
+   **
+    switch(operator){
+      case 'add':
+        console.log( "etc" );
+        return add(num1, num2);
+        break;
+      default:
+        return 'something';
+    }
+
+    *******
+
+    A switch statement does not evaluate based on True or False.
+    It evaluates based on parameter matching.
+
+    Switch is preferential for finite numbers of cases because,
+    it exhibits faster time complexity.
+
+  */
+
   if( op === "add"){
-    console.log( num1 + " + " + num2 + " = " + (num1+num2))
+    console.log( num1 + " + " + num2 + " = " + (num1+num2) );
     return (num1 + num2);
   }
   if( op === "subtract"){
-    console.log( num1 + " - " + num2+ " = " + (num1-num2))
+    console.log( num1 + " - " + num2+ " = " + (num1-num2));
     return (num1 - num2);
   }
   if( op === "multiply"){
-    console.log( num1 + " * " + num2 + " = " + (num1*num2))
+    console.log( num1 + " * " + num2 + " = " + (num1*num2));
     return (num1 * num2);
   }
   if( op === "divide"){
-    console.log( num1 + " / " + num2+ " = " + (num1/num2))
+    console.log( num1 + " / " + num2+ " = " + (num1/num2));
     return (num1 / num2);
   }
 }
@@ -127,6 +152,12 @@ function isGreaterThan(num1, num2){
   }
 }
 
+/** Alternate Solution
+**
+*   return num1 > num2;
+*
+*/
+
 /**
  * Returns true if `a` is less than `b`.
  * @param {number} a
@@ -141,6 +172,11 @@ function isLessThan(num1, num2){
     return false;
   }
 }
+/** Alternate Solution
+**
+*   return num1 < num2;
+*
+*/
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -157,6 +193,12 @@ function areEqual(num1, num2){
   }
 }
 
+/** Alternate Solution
+**
+*   return num1 === num2;
+*
+*/
+
 /**
  * Returns the smallest value of two numbers.
  * @param {number} x
@@ -172,6 +214,12 @@ function minimum(num1, num2){
   }
 }
 
+/** Alternate Solution
+**
+*   return Math.min(num1, num2);
+*
+*/
+
 /**
  * Returns the largest value of two numbers.
  * @param {number} x
@@ -186,6 +234,12 @@ function maximum(num1, num2){
     return num1;
   }
 }
+
+/** Alternate Solution
+**
+*   return Math.max(num1, num2);
+*
+*/
 
 /**
  * Returns true if `n` is even.
@@ -215,6 +269,12 @@ function isOdd(num){
   }
 }
 
+/** Alternate Solution
+**
+*   return !( isEven(num) );
+*
+*/
+
 /**
  * Returns a letter grade.
  * "A": 90-100%
@@ -228,6 +288,28 @@ function isOdd(num){
  */
 
 function letterGrade(grade, max){
+
+/** Alternate Solution
+**
+*   switch(true){
+*      case myGrade >= 90:
+*        return "A";
+*        break;
+*      case myGrade >= 80;
+*        return "B";
+*        break;
+*      default:
+*        return "F";
+*    }
+*
+*   var letterGrade = "F";
+*   if( myGrade >= 90){
+*     letterGrade = "A";
+*   } else if( myGrade >= 80){
+*     return "B";
+*   } etc, etc, etc {}
+*   return letterGrade;
+*/
 
   var num = (grade / max) * 100;
   console.log(num);
@@ -254,6 +336,7 @@ function letterGrade(grade, max){
  */
 
 function incrementReviews(stuff){
+  console.log(stuff[reviews]);
   if( stuff.hasOwnProperty('reviews') ){
     stuff.reviews = stuff.reviews + 1;
   } else {
