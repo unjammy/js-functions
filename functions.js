@@ -336,7 +336,7 @@ function letterGrade(grade, max){
  */
 
 function incrementReviews(stuff){
-  console.log(stuff[reviews]);
+  //console.log(stuff[reviews]);
   if( stuff.hasOwnProperty('reviews') ){
     stuff.reviews = stuff.reviews + 1;
   } else {
